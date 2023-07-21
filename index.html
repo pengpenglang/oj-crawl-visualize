@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUGBACM20级暑期训练统计</title>
+
+<head>
+    <style>
+        * {
+            user-select: none;
+        }
+
+        body {
+            background-image: url("https://fastly.jsdelivr.net/gh/Langwenchong/cdn/bg/bg.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .box {
+            display: flex;
+        }
+
+        #box1 {
+            /*设置flex居中*/
+            margin-top: 10%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box2 {
+            justify-content: center;
+        }
+
+        .niceButton {
+            display: flex;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: rgb(16, 185, 214);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            margin: 20px 10px 0 10px;
+        }
+
+        .niceButton:hover {
+            background-color: rgb(226, 14, 14);
+        }
+
+        .niceButton:active {
+            background-color: #1795bb;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        #title {
+            width: 34%;
+            transition: 0.1s;
+            letter-spacing: 4px;
+            cursor: pointer;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 10px;
+            animation: flicker 1.5s infinite alternate;
+            color: #fff4e1;
+            background: linear-gradient(#fecea8, #ff847b, #e84a5f);
+        }
+
+        #title:hover {
+            background-color: #62d2a2;
+            background: linear-gradient(#9df3c4, #62d2a2, #1fab89);
+            /* 标准的语法（必须放在最后） */
+            color: white;
+            box-shadow: 0 0 10px #ebfffa, 0 0 25px #ebfffa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="box">
+        <img class="box" src="https://bm.cugb.edu.cn/vis/upload/resources/image/xhgf/02.png" width="13%" height="13%" />
+        <img class="box" src="./back.png" width="40%" height="40%" />
+    </div>
+    <h1 id="title">CUGBACM20级暑期训练统计</h1>
+    <div id="box2" class="box">
+        <button class="niceButton" onclick="javacript:window.location.href='./hdu/hdu.html'">杭电多校统计</button>
+        <button class="niceButton" onclick="javacript:window.location.href='./nowcoder/nowcoder.html'">牛客多校统计</button>
+        <button class="niceButton" onclick="javacript:window.location.href='./info/info.html'">训练说明信息</button>
+        <button class="niceButton"
+            onclick="javacript:window.location.href='https:\\/\\/www.wolai.com/tACFgxyjePehjsimHj5pfV'">参赛安排名单</button>
+    </div>
+</body>
+
+<script>
+    var title = document.getElementById("title");
+    let flag = 1;
+    let cnt = 0;
+    title.addEventListener("mouseup", function () {
+        if (cnt != 11) {
+            if (cnt < 10) title.innerText = "连戳x" + cnt + '❌';
+            else title.innerText = "☁️💡🎈✔️😏";
+            cnt += 1;
+        } else
+            title.innerText = "CUGBACM20级暑期训练统计", cnt = 0;
+    });
+    title.addEventListener("mouseleave", function () {
+        title.innerText = "CUGBACM20级暑期训练统计", cnt = 0;
+    });
+</script>
+
+</html>

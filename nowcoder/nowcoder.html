@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牛客多校训练统计</title>
+    <style>
+        body * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        #back {
+            position: fixed;
+            top: 2%;
+            left: 5%;
+            font-size: 20px;
+            padding: 5px 5px 5px 5px;
+            display: inline-block;
+            transition: 0.1s;
+            cursor: pointer;
+            border-radius: 15px;
+            color: #fff4e1;
+            background: linear-gradient(#fecea8, #ff847b, #e84a5f);
+            box-shadow: 0 9px #999;
+        }
+
+        #back:hover {
+            color: white;
+            background-color: #62d2a2;
+            background: linear-gradient(#9df3c4, #62d2a2, #1fab89);
+            /* 标准的语法（必须放在最后） */
+        }
+
+        #toc {
+            position: fixed;
+            top: 2%;
+            right: 10%;
+        }
+
+        .item {
+            transition: 0.1s;
+            padding: 5px 5px 5px 5px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            background-color: rgb(16, 185, 214);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .item:hover {
+            background-color: rgb(226, 14, 14);
+        }
+
+        .item:active {
+            background-color: #1795bb;
+            box-shadow: 0 9px #999;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back">
+        返回首页
+    </div>
+    <div id="toc">
+        <span id="child1" class="item">排名统计</span>
+        <span id="child2" class="item">表现统计</span>
+        <span id="child3" class="item">过题统计</span>
+    </div>
+    <figure>
+        <embed id="pic1" src="./nowcoder_line.svg" style="width: 100%; display: block;">
+        <embed id="pic2" src="./nowcoder_bar.svg" style="width: 100%; display: none;">
+        <embed id="pic3" src="./nowcoder_pie.svg" style="width: 100%; display: none;">
+    </figure>
+</body>
+<script>
+    let child1 = document.getElementById('child1');
+    let child2 = document.getElementById('child2');
+    let child3 = document.getElementById('child3');
+    child1.onclick = function () {
+        document.getElementById('pic1').style.display = 'block';
+        document.getElementById('pic2').style.display = 'none';
+        document.getElementById('pic3').style.display = 'none';
+    };
+    child2.onclick = function () {
+        document.getElementById('pic1').style.display = 'none';
+        document.getElementById('pic2').style.display = 'block';
+        document.getElementById('pic3').style.display = 'none';
+    };
+    child3.onclick = function () {
+        document.getElementById('pic1').style.display = 'none';
+        document.getElementById('pic2').style.display = 'none';
+        document.getElementById('pic3').style.display = 'block';
+    };
+    let back = document.getElementById('back');
+    back.onclick = function () {
+        window.location.href = '../index.html';
+    };
+</script>
+
+</html>
